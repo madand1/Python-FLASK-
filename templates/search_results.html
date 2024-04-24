@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% block title %}Resultados de la Búsqueda{% endblock %}
+{% block content %}
+<div class="content">
+  <div class="container_12">
+    <div class="grid_9">
+      <h3 class="retro">Resultados de la Búsqueda</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Año</th>
+            <th>Categoría</th>
+            <th>Nombre del Premio Nobel</th>
+            <th>Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for result in results %}
+          {% for laureate in result.laureates %}
+          <tr>
+            <td>{{ result.year }}</td>
+            <td>{{ result.category }}</td>
+            <td>{{ laureate.firstname }} {{ laureate.surname }}</td>
+            <td>
+              {% for identificador in result.identificadores %}
+                <a href="{{ url_for('detail', identificador=identificador) }}">Detalle</a>
+              {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

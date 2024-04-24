@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block title %}Buscar{% endblock %}
+{% block content %}
+<div class="content">
+  <div class="container_12">
+    <div class="grid_9">
+      <h1>Buscar Premios Nobel</h1>
+      <form action="/search_results" method="post">
+          <label for="search_year">Año:</label>
+          <input type="number" id="search_year" name="search_year" min="1901" max="2023">
+          <label for="search_term">Nombre del premio Nobel:</label>
+          <input type="text" id="search_term" name="search_term">
+          <button type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

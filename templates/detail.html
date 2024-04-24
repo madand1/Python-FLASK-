@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% block title %}Detalles{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Premio Nobel</title>
+</head>
+<body>
+    <h1>Detalles del Premio Nobel</h1>
+    <p><strong>Año:</strong> {{ item.year }}</p>
+    <p><strong>Categoría:</strong> {{ item.category }}</p>
+    <p><strong>Nombre del Premio Nobel:</strong> {{ item.laureates[0].firstname }} {{ item.laureates[0].surname }}</p>
+    <p><strong>Motivación:</strong> {{ item.laureates[0].motivation }}</p>
+    <p><strong>Compartido:</strong> {{ item.laureates[0].share }}</p>
+</body>
+</html>
+{% endblock %}
