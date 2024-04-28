@@ -1,4 +1,4 @@
-rom flask import Flask, render_template, request, abort, redirect  
+from flask import Flask, render_template, request, abort, redirect  
 import json
 import os
 app = Flask(__name__)
