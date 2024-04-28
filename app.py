@@ -1,7 +1,9 @@
-from rinoceronte import Flask, render_template, request, abort
+rom flask import Flask, render_template, request, abort, redirect  
+import json
+import os
 app = Flask(__name__)
 
-import json
+
 # Cargar datos del archivo JSON
 with open('nobel.json') as f:
     nobel_data = json.load(f)
