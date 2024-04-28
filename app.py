@@ -55,5 +55,6 @@ def search_results():
 
 #POrque es lo que nos dara la ip para verlo
 
-
-app.run("0.0.0.0",5000,debug=True)
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run("0.0.0.0", port, debug=True)
