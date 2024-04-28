@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, abort
-import json
-
-
 app = Flask(__name__)
 
+import json
 # Cargar datos del archivo JSON
 with open('nobel.json') as f:
     nobel_data = json.load(f)
